@@ -28,7 +28,7 @@ body {
 }
 
 .card {
-  max-width: 340px;
+  max-width: 40vw;
   margin: auto;
   overflow-y: auto;
   position: relative;
@@ -43,7 +43,7 @@ body {
 }
 
 .card[data-state="#about"] {
-  height: 450px;
+  height: 80vh;
 }
 .card[data-state="#about"] .card-main {
   padding-top: 0;
