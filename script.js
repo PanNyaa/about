@@ -19,7 +19,7 @@ buttons.forEach(btn => {
   btn.addEventListener("click", handleButtonClick);
 });
 
-window.onload = function() {
+window.onload =  function() {
   Particles.init({
     selector: '.background',
     connectParticles: true,
