@@ -24,7 +24,7 @@ window.onload = function() {
     selector: '.background',
     connectParticles: true,
     color:'#98D2EB',
-    minDistance:'70',
-    sizeVariations:2
+    minDistance:'100',
+    sizeVariations:10
   });
 };
