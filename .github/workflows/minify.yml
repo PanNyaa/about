@@ -16,6 +16,8 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: yarn install
+      - name: yarn init
+        run: yarn init
       - name: Minify HTML
         run: yarn minify:html
       - name: Minify CSS
