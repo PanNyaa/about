@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --flat
       - name: yarn add yarn
         run: yarn add yarn
       - name: node ./node_modules/yarn/bin/yarn.js init
