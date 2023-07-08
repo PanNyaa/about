@@ -23,8 +23,8 @@ jobs:
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error index.html -o index.html
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error --minify-css true style.css -o style.css
           : # yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error --minify-js true script.js -o script.js
-          yarn uglifyjs script.js -c -m --mangle-props
-          yarn uglifyjs p.js -c -m --mangle-props
+          yarn uglifyjs script.js -c -m --mangle-props -o script.js
+          yarn uglifyjs p.js -c -m --mangle-props -o p.js
           git add .
           git commit -m "Create page minify branch"
           git push -f -u origin page-minify
