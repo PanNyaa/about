@@ -17,7 +17,13 @@ jobs:
       - name: Minify html, css, and js files
         run: yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true
       - name: git add
-        run: git add
+        run: git add .
+      - name: git config1
+        run: git config --global user.email "you@example.com"
+      - name: git config1
+        run: git config --global user.name "Your Name"
+  
+  
       - name: git commit
         run: git commit
       - name: Push minified files to page-minify branch
