@@ -19,7 +19,7 @@ jobs:
           yarn install
           yarn add html-minifier
           yarn html-minifier --help
-          yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true *.html *.css *.js
+          yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error --minify-css true --minify-js true *.html *.css *.js
           git add .
           git commit -m "Create page minify branch"
           git push -f -u origin page-minify
