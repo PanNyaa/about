@@ -13,7 +13,7 @@ jobs:
       - name: Install yarn
         run: yarn install
       - name: yarn add minify 
-        run: npm install html-minifier
+        run: npm install html-minifier -dev
       - name: Minify html, css, and js files
         run: npm run html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true
       - name: Push minified files to page-minify branch
