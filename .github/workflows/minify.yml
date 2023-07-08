@@ -1,4 +1,4 @@
-name: Minify HTML, CSS, and JS
+name: Minify
 
 on:
   push:
@@ -10,23 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-      - name: Install dependencies
-        run: yarn install --flat
-      - name: yarn add --dev csv
-        run: yarn add --dev csv
-      - name: Minify HTML
-        run: yarn minify:html
-      - name: Minify CSS
-        run: yarn minify:css
-      - name: Minify JS
-        run: yarn minify:js
-      - name: Push to Pages-minify branch
-        run: |
-          git checkout Pages-minify
-          git merge --ff-only main
-          git push
-          
+      - name: Install yarn
+        run: yarn install
+      - name: Minify html, css, and js files
+        run: yarn minify
+      - name: Push minified files to page-minify branch
+        run: git push origin page-minify
