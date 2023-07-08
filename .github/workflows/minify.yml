@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git config user.name  "thaim"
-          git config user.email "thaim@users.noreply.github.com"
+          git config user.name  "PanNyaa"
+          git config user.email "PanNyaa@users.noreply.github.com"
           git switch -c page-minify
           touch test.txt
           echo "Today's date is $(date)" > test.txt
