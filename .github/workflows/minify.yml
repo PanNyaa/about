@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install yarn
         run: yarn install
+      - name: yarn add minify 
+        run: npm install html-minifier
       - name: Minify html, css, and js files
-        run: yarn minify
+        run: html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true
       - name: Push minified files to page-minify branch
         run: git push origin page-minify
