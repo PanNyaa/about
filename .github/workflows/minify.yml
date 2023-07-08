@@ -16,5 +16,9 @@ jobs:
         run: yarn add html-minifier
       - name: Minify html, css, and js files
         run: yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true
+      - name: git add
+        run: git add
+      - name: git commit
+        run: git commit
       - name: Push minified files to page-minify branch
-        run: git push origin HEAD:page-minify
+        run: git push origin page-minify
