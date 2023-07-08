@@ -14,8 +14,10 @@ jobs:
           git config user.name  "PanNyaa"
           git config user.email "PanNyaa@users.noreply.github.com"
           git switch -c page-minify
-          touch test.txt
-          echo "Today's date is $(date)" > test.txt
+          : # touch test.txt
+          : # echo "Today's date is $(date)" > test.txt
+          yarn install
+          yarn add html-minifier
           git add .
           git commit -m "Create page minify branch"
           git push -f -u origin page-minify
