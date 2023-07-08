@@ -18,6 +18,6 @@ jobs:
           echo "Today's date is $(date)" > test.txt
           git add .
           git commit -m "Create page minify branch"
-          git push -u origin page-minify
+          git push -f -u origin page-minify
           
           
