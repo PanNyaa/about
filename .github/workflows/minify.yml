@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git checkout -b page-minify
+          git switch -c page-minify
           touch test.txt
           echo "Today's date is $(date)" > test.txt
           git add .
