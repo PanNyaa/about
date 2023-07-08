@@ -25,6 +25,6 @@ jobs:
   
   
       - name: git commit
-        run: git commit -m
+        run: git commit -m "minify"
       - name: Push minified files to page-minify branch
         run: git push origin page-minify
