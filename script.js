@@ -19,16 +19,6 @@ buttons.forEach(btn => {
   btn.addEventListener("click", handleButtonClick);
 });
 
-window.onload =  function() {
-  Particles.init({
-    selector: '.background',
-    connectParticles: true,
-    color:'#98D2EB',
-    minDistance:'100',
-    sizeVariations:10
-  });
-};
-
 // スワイプ検出
 const SwipeTracker = function(elem, direction="") {
 
