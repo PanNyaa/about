@@ -204,7 +204,7 @@ body {
   font-size: 14px;
   margin: 0;
   font-weight: 400;
-  font-family: "DM Sans", sans-serif;
+  /*font-family: "DM Sans", sans-serif;*/
 }
 
 .card-social {
@@ -260,7 +260,7 @@ body {
   cursor: pointer;
   color: #5c5c6d;
   transition: 0.3s;
-  font-family: "Jost", sans-serif;
+  /*font-family: "Jost", sans-serif;*/
   font-weight: 500;
   outline: 0;
   border-bottom: 3px solid transparent;
@@ -351,7 +351,7 @@ body {
   font-size: 13px;
   color: #6f6f7b;
   line-height: 1.5;
-  font-family: "DM Sans", sans-serif;
+  /*font-family: "DM Sans", sans-serif;*/
 }
 
 .card-contact-wrapper {
@@ -363,7 +363,7 @@ body {
   align-items: center;
   font-size: 13px;
   color: #6f6f7b;
-  font-family: "DM Sans", sans-serif;
+  /*font-family: "DM Sans", sans-serif;*/
   line-height: 1.6;
   cursor: pointer;
 }
@@ -393,7 +393,7 @@ body {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Jost", sans-serif;
+  /*font-family: "Jost", sans-serif;*/
   transition: 0.3s;
 }
 
@@ -538,7 +538,7 @@ p {
   animation: pulsea 2s linear infinite;
   font-size: 50pt;
   color: transparent;
-  font-family: Arial;
+  /*font-family: Arial;*/
   content: "＞";
   text-shadow: 0pt 0px 0px rgba(255,255,255,1), 10pt 0px 0px rgba(255,255,255,1), 20pt 0px 0px rgba(255,255,255,1);
   position: absolute;
@@ -550,7 +550,7 @@ p {
   animation: pulseb 2s linear infinite;
   font-size: 50pt;
   color: transparent;
-  font-family: Arial;
+  /*font-family: Arial;*/
   content: "＜";
   text-shadow: 0pt 0px 0px rgba(255,255,255,1), 10pt 0px 0px rgba(255,255,255,1), 20pt 0px 0px rgba(255,255,255,1);
   position: absolute;
@@ -580,6 +580,12 @@ p {
   left: 80vw;
 
 }
+
+button {
+  font-weight: bold !important;
+}
+
+
 
 @media (orientation: portrait){
 
