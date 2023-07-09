@@ -33,7 +33,7 @@ body {
 }
 
 .card {
-  width: 50vw;
+  width: 80vw;
   margin: auto;
   overflow-y: auto;
   position: relative;
@@ -539,7 +539,7 @@ p {
   content: "＞";
   text-shadow: 0pt 0px 0px rgba(255,255,255,1), 10pt 0px 0px rgba(255,255,255,1), 20pt 0px 0px rgba(255,255,255,1);
   position: absolute;
-  margin: 50vh 0px 0px 81vw;
+  margin: 50vh 0vw 0px calc(100vw + -2em + 20px);
   /*padding: 20px;*/
  }
 
@@ -551,7 +551,7 @@ p {
   content: "＜";
   text-shadow: 0pt 0px 0px rgba(255,255,255,1), 10pt 0px 0px rgba(255,255,255,1), 20pt 0px 0px rgba(255,255,255,1);
   position: absolute;
-  margin: 50vh 0px 0px 5vw;
+  margin: 50vh 0vw 0px calc(0em - 20px);
   /*padding: 20px;*/
  }
  
@@ -573,7 +573,8 @@ p {
   height: 100vh;
   position: absolute;
   padding: 0px;
-  margin: 0px 0px 0px 76vw;
+  /* margin: 0px 0px 0px 76vw; */
+  left: 80vw;
 
 }
 
