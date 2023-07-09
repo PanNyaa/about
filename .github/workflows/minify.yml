@@ -13,18 +13,28 @@ jobs:
       - run: |
           git config user.name  "PanNyaa"
           git config user.email "PanNyaa@users.noreply.github.com"
+          
           git switch -c page-minify
+          
           : # touch test.txt
           : # echo "Today's date is $(date)" > test.txt
+          
           yarn install
           yarn add html-minifier
           yarn add uglify-js
+          
           yarn html-minifier --help
+          
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error index.html -o index.html
+          
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error --minify-css true style.css -o style.css
           : # yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error --minify-js true script.js -o script.js
+          
           yarn uglifyjs script.js -c -m --mangle-props -o script.js
-          yarn uglifyjs p.js -c -m --mangle-props -o p.js
+          
+          : # yarn uglifyjs p.js -c -m --mangle-props -o p.js
+          yarn uglifyjs p.js -c -m -o p.js
+          
           git add .
           git commit -m "Create page minify branch"
           git push -f -u origin page-minify
