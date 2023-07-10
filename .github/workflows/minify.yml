@@ -36,7 +36,7 @@ jobs:
           : # yarn uglifyjs p.js -c -m -o p.js
           
           echo "node_modules" >> .gitignore
-          git rm --cached -r node_modules
+          : # git rm --cached -r node_modules
           
           git add .
           git commit -m "Create page minify branch"
