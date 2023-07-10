@@ -46,6 +46,7 @@ jobs:
           yarn uglifyjs onload.js -c -m -o onload.js
           
           echo "node_modules" >> .gitignore
+          echo "yarn.lock" >> .gitignore
           : # git rm --cached -r node_modules
           
           git add .
