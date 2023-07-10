@@ -47,6 +47,7 @@ jobs:
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
+          echo "package.json" >> .gitignore
           : # git rm --cached -r node_modules
           
           git add .
