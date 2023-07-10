@@ -21,7 +21,7 @@ jobs:
           
           yarn install
           yarn add html-minifier
-          yarn install clean-css-cli
+          yarn add clean-css-cli
           yarn add uglify-js
           
           : # yarn html-minifier --help
