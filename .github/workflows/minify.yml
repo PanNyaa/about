@@ -26,7 +26,11 @@ jobs:
           
           : # yarn html-minifier --help
           
-          : # SIZE_s=(ls−l∣grep−E"(html∣css∣js)" | awk '{print $5}')
+          : # minify前のhtml,css,jsのファイルサイズ
+          SIZE_html_s=`find . -type f -name "*.html" -exec cat {} + | wc -c`
+          SIZE_css_s=`find . -type f -name "*.css" -exec cat {} + | wc -c`
+          SIZE_js_s=`find . -type f -name "*.js" -exec cat {} + | wc -c`
+          SIZE_before=$(( SIZE_html_s + SIZE_css_s + SIZE_js_s ))
           
           : # html minify
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error index.html -o index.html
@@ -47,14 +51,21 @@ jobs:
           : # --mangle-propsを付けるとパーティクルのコネクトラインが消える？
           yarn uglifyjs onload.js -c -m -o onload.js
           
-          : # SIZE_d=$(ls -l | grep -E "(html|css|js)$" | awk '{print $5}')
-          : # ANSWER=$((SIZE_s - SIZE_d))
-        
-          : # SIZE_s_kb=$((SIZE_s / 1024))
-          : # SIZE_d_kb=$((SIZE_d / 1024))
-          : # ANSWER_kb=$((ANSWER / 1024))
+          : # minify後のhtml,css,jsのファイルサイズ
+          SIZE_html_d=`find . -type f -name "*.html" -exec cat {} + | wc -c`
+          SIZE_css_d=`find . -type f -name "*.css" -exec cat {} + | wc -c`
+          SIZE_js_d=`find . -type f -name "*.js" -exec cat {} + | wc -c`
+          SIZE_after=$(( SIZE_html_d + SIZE_css_d + SIZE_js_d ))
           
-          : # echo "圧縮前後の差分：$ANSWER_kb KB" >> result.md
+          : # minify前の各種ファイル群合計サイズからminify後の合計サイズを引いた差を計算する
+          SIZE_diff=`echo "$SIZE_before - $SIZE_after" | bc -l`
+          SIZE_diff_kb=`echo "scale=2; $SIZE_diff / 1024" | bc`
+
+          echo "html : $SIZE_html_s -> $SIZE_html_d (byte)" >> result.md
+          echo "css : $SIZE_css_s -> $SIZE_css_d (byte)" >> result.md
+          echo "js : $SIZE_js_s -> $SIZE_js_d (byte)" >> result.md
+          echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.md
+          echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.md
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
