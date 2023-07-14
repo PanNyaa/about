@@ -54,7 +54,7 @@ jobs:
           SIZE_d_kb=$((SIZE_d / 1024))
           ANSWER_kb=$((ANSWER / 1024))
           
-          echo "圧縮前後の差分：$ANSWER_kb KB" > result.md
+          echo "圧縮前後の差分：$ANSWER_kb KB" >> result.md
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
