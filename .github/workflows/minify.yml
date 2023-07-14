@@ -67,11 +67,13 @@ jobs:
           echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.txt
           echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.txt
           
+          YYYYMMDD=`date +"%Y%m%d"`
+          
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
           echo "package.json" >> .gitignore
           : # git rm --cached -r node_modules
           
           git add .
-          git commit -m "total minify : $SIZE_diff_kb (Kbyte)"
+          git commit -m "$YYYYMMDD : total minify $SIZE_diff_kb (Kbyte)"
           git push -f -u origin page-minify
