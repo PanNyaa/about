@@ -73,5 +73,5 @@ jobs:
           : # git rm --cached -r node_modules
           
           git add .
-          git commit -m "Create page minify branch"
+          git commit -m "total minify : $SIZE_diff_kb (Kbyte)"
           git push -f -u origin page-minify
