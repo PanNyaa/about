@@ -26,6 +26,8 @@ jobs:
           
           : # yarn html-minifier --help
           
+          SIZE_s=$(du -sh *.html *.css *.js | awk '{s+=$1}')
+          
           : # html minify
           yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --continue-on-parse-error index.html -o index.html
           
@@ -44,6 +46,10 @@ jobs:
           
           : # --mangle-propsを付けるとパーティクルのコネクトラインが消える？
           yarn uglifyjs onload.js -c -m -o onload.js
+          
+          SIZE_d=$(du -sh *.html *.css *.js | awk '{s+=$1}')
+          ANSWER=$((SIZE_s - SIZE_d))
+          echo "$ANSWER KB" > result.md
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
