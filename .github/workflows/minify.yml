@@ -49,7 +49,7 @@ jobs:
           
           SIZE_d=$(du -sh *.html *.css *.js | awk '{s+=$1}')
           ANSWER=$((SIZE_s - SIZE_d))
-          echo "$ANSWER KB" > result.md
+          echo "$SIZE_s KB $SIZE_d KB $ANSWER KB" > result.md
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
