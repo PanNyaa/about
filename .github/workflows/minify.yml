@@ -61,11 +61,11 @@ jobs:
           SIZE_diff=`echo "$SIZE_before - $SIZE_after" | bc -l`
           SIZE_diff_kb=`echo "scale=2; $SIZE_diff / 1024" | bc`
 
-          echo "html : $SIZE_html_s -> $SIZE_html_d (byte)" >> result.md
-          echo "css : $SIZE_css_s -> $SIZE_css_d (byte)" >> result.md
-          echo "js : $SIZE_js_s -> $SIZE_js_d (byte)" >> result.md
-          echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.md
-          echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.md
+          echo "html : $SIZE_html_s -> $SIZE_html_d (byte)" >> result.txt
+          echo "css : $SIZE_css_s -> $SIZE_css_d (byte)" >> result.txt
+          echo "js : $SIZE_js_s -> $SIZE_js_d (byte)" >> result.txt
+          echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.txt
+          echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.txt
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
