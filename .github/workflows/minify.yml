@@ -67,7 +67,7 @@ jobs:
           echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.txt
           echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.txt
           
-          YYYYMMDD=`date +"%Y%m%d"`
+          YYYYMMDD=`TZ=-9 date +"%Y%m%d%H%M"`
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
