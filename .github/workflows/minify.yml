@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Set current datetime as env variable
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_ENV
+
       - run: |
           git config user.name  "PanNyaa"
           git config user.email "PanNyaa@users.noreply.github.com"
@@ -67,8 +73,7 @@ jobs:
           echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.txt
           echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.txt
           
-          TZ='Asia/Tokyo'
-          YYYYMMDD=`date +"%Y-%m-%d-%H:%M"`
+          : # YYYYMMDD=`date +"%Y-%m-%d-%H:%M"`
           
           echo "node_modules" >> .gitignore
           echo "yarn.lock" >> .gitignore
@@ -76,5 +81,5 @@ jobs:
           : # git rm --cached -r node_modules
           
           git add .
-          git commit -m "$YYYYMMDD : total minify $SIZE_diff_kb (Kbyte)"
+          git commit -m "${{ env.CURRENT_DATETIME }} : total minify $SIZE_diff_kb (Kbyte)"
           git push -f -u origin page-minify
