@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set current datetime as env variable
-        env:
-          TZ: 'Asia/Tokyo' # タイムゾーン指定
       - run: |
           git config user.name  "PanNyaa"
           git config user.email "PanNyaa@users.noreply.github.com"
@@ -70,7 +67,7 @@ jobs:
           echo "total size : $SIZE_before -> $SIZE_after (byte)" >> result.txt
           echo "total minify : $SIZE_diff_kb (Kbyte)" >> result.txt
           
-          
+          TZ='Asia/Tokyo'
           YYYYMMDD=`date +"%Y-%m-%d-%H:%M"`
           
           echo "node_modules" >> .gitignore
