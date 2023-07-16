@@ -55,7 +55,7 @@ jobs:
           
           : # --mangle-propsを付けるとパーティクルのコネクトラインが消える？
           : # yarn uglifyjs p.js -c -m --mangle-props -o p.js
-          yarn terser p.js -c -m -o comments=true sp.js
+          yarn terser p.js -c -m -o comments=true p.js
           
           : # --mangle-propsを付けるとパーティクルのコネクトラインが消える？
           yarn terser onload.js -c -m -o onload.js
