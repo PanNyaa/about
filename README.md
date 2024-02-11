@@ -96,5 +96,3 @@ SoundCloudとかSNSアカウントとか載せてます
 
 
 
-
-RSS用のリポジトリ[https://github.com/PanNyaa/rss]https://github.com/PanNyaa/rss
