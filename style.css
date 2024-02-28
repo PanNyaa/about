@@ -50,18 +50,18 @@ body {
 }
 
 .card[data-state="#about"] {
-  height: 700px;
+  height: 90vh;
 }
 .card[data-state="#about"] .card-main {
   padding-top: 0;
 }
 
 .card[data-state="#contact"] {
-  height: 700px;
+  height: 90vh;
 }
 
 .card[data-state="#experience"] {
-  height: 700px;
+  height: 90vh;
 }
 
 .card.is-active .card-header {
