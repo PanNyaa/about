@@ -35,7 +35,7 @@ body {
 }
 
 .card {
-  width: 80vw;
+  width: 400px;
   margin: auto;
   overflow-y: auto;
   position: relative;
@@ -50,18 +50,18 @@ body {
 }
 
 .card[data-state="#about"] {
-  height: 75vh;
+  height: 700px;
 }
 .card[data-state="#about"] .card-main {
   padding-top: 0;
 }
 
 .card[data-state="#contact"] {
-  height: 75vh;
+  height: 700px;
 }
 
 .card[data-state="#experience"] {
-  height: 75vh;
+  height: 700px;
 }
 
 .card.is-active .card-header {
