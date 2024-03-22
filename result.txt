@@ -1,0 +1,5 @@
+html : 62713 -> 57331 (byte)
+css : 17105 -> 12525 (byte)
+js : 5273158 -> 5266788 (byte)
+total size : 5352976 -> 5336644 (byte)
+total minify : 15.94 (Kbyte)
