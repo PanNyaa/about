@@ -41,7 +41,7 @@ const SwipeTracker = function(elem, direction="") {
   // スワイプと見なす閾値の設定、数値は用途で調整
   const setThreshold = function(){
       // 画面幅1/4または300の小さい方、割としっかり動かさないとスワイプにならない
-      thresholdX = Math.min(window.innerWidth/4, 300);
+      thresholdX = Math.min(window.innerWidth/3, 400);
       // 画面高さ1/6または50の小さい方、縦は敏感
       thresholdY = Math.min(window.innerHeight/6, 50);
   };
