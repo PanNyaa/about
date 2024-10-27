@@ -141,6 +141,7 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(-64px);
   background-image: var(--pic-avatar);
+  background-size: contain; /* px指定だと要素サイズの変化に追従できなかったけど、containだと要素サイズが変わっても追従していた */
 }
 
 .card-fullname {
