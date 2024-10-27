@@ -96,7 +96,7 @@ body {
 .card-header {
   position: relative;
   display: flex;
-  height: 200px;
+  height: 180px;
   flex-shrink: 0;
   width: 100%;
   transition: 0.3s;
@@ -195,7 +195,7 @@ body {
 */
 
 .card-content {
-  padding: 20px;
+  padding: 10px;
 }
 
 .card-desc {
